@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*' # Trigger this workflow when a new version tag is pushed (e.g. v1.0.1)
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -33,17 +36,6 @@ jobs:
           cat << 'EOF' > android/app/google-services.json
           ${{ secrets.GOOGLE_SERVICES_JSON }}
           EOF
-
-      - name: Patch phone_state_background namespace
-        run: |
-          BUILD_FILE=$(find ~ /opt -name "build.gradle" -path "*/phone_state_background-0.0.4/android/build.gradle" 2>/dev/null | head -n 1)
-          if [ -n "$BUILD_FILE" ]; then
-            sed -i 's/android {/android {\n    namespace "me.sodipto.phone_state_background"/' "$BUILD_FILE"
-            echo "Patched $BUILD_FILE"
-          else
-            echo "Error: Could not find phone_state_background build.gradle"
-            exit 1
-          fi
 
       - name: Build APK
         run: flutter build apk --release
