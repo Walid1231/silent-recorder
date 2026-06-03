@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "283021094086",
+    "project_id": "message-ec810",
+    "storage_bucket": "message-ec810.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283021094086:android:01a21370f9b626ba0a3bc7",
+        "android_client_info": {
+          "package_name": "com.silentrecorder.silent_recorder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSX6qVoHk18e7nsawlkSGHSkf-AIq3I9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

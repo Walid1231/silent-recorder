@@ -1,0 +1,52 @@
+name: silent_recorder
+description: "Silent call recorder with Firebase sync and remote monitoring."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Firebase
+  firebase_core: any
+  firebase_auth: any
+  firebase_database: any
+  firebase_storage: any
+
+  # Call detection
+  phone_state_background: any
+
+  # Audio recording
+  record: any
+
+  # Audio playback
+  just_audio: any
+
+  # Background service
+  flutter_background_service: any
+  flutter_local_notifications: any
+
+  # Permissions
+  permission_handler: any
+
+  # Utilities
+  path_provider: any
+  intl: any
+  uuid: any
+  shared_preferences: any
+  package_info_plus: ^10.1.0
+  ota_update: ^7.1.0
+  dio: ^5.9.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
