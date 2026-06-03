@@ -46,6 +46,9 @@ jobs:
           artifacts: "build/app/outputs/flutter-apk/app-release.apk"
           token: ${{ secrets.GITHUB_TOKEN }}
           name: "Release ${{ github.ref_name }}"
-          body: "Automated release via GitHub Actions."
+          generateReleaseNotes: true
+          allowUpdates: true
+          removeArtifacts: true
+          makeLatest: true
           draft: false
           prerelease: false
